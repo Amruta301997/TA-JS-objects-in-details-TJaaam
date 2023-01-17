@@ -4,6 +4,9 @@
 
 3. Use the data (name, age) of two different person to create the object using `createUser`. Store the returned value in `personOne` and `personTwo`.
 
+let personOne=createUser("Sourabh",26);
+let personTwo=createUser("Amruta",25);
+
 4. Change the code inside `createUser` in such a way that the methods `sayHello` doesn't have to be in all object. Use the prototypal nature. (Hint Object.create())
 
 5. Convert the `createUser` function into Pseudoclassical pattern of object creation. Use `F.prototype` to store the methods. `F.prototype` means storing the methods in prototype property of the function.
@@ -17,3 +20,21 @@
 9. Check by creating two instance of the class using data of two different persons and re-assign the value of `personOne` and `personTwo`
 
 10. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
+
+
+let sayHello = {
+    alert 
+    replaceName: function(name){
+        this.name = name;
+        return this.name
+    }
+}
+
+
+function createUser(name, age){
+     let user={};
+     user.name=name;
+     user.age=age;
+
+     return user;
+}

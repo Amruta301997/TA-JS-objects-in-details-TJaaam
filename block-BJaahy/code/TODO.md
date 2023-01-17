@@ -1,6 +1,38 @@
 # More about class
 
 - Create a class named `Square` which accepts one parameter `side` and will set two property `width` and `height` to the value of `side`.
+```js
+class Square{
+    constructor(side){
+        let side = new Square(width , height);
+        this.width = width;
+        this.height = height; 
+    }
+
+    description(){
+        alert (`The square is ${width} x ${height}`);
+    }
+    calcArea(){
+        return this.side * this.side;
+    }
+    get area(){
+        return this.side * this.side;
+    }
+    set area(value){
+       this.side =  alert (`The square is ${width} x ${height}`);
+    }
+    static isEqual(s1,s2){
+       if(side = width*height){
+        alert `true`;
+       }
+       else{
+        alert `false`;
+       }
+    }
+}
+let s1 = new Square(6);
+let s2 = new Square(9);
+```
 
 - Add a method named `description` that will alert a message saying `The square is ${width} x ${height}`
 
@@ -37,3 +69,23 @@
 - Check the `fullName` using getter
 
 - Check the `nameContains` method
+```js
+class User{
+    constructor(firstName,lastName){
+       this.firstName = firstName;
+       this.lastName = lastName;
+    }
+    get fullName(){
+        return firstName + lastName;
+    }
+    set fullName(value){
+        if(charAt(5) < fullName){
+            alert `Full name should be more than 5 characters`;
+        }
+        else{
+            this.fullName = value:firstName + value:lastName;
+        }
+         
+    }
+}
+```

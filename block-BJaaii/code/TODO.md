@@ -12,6 +12,34 @@ Queue
 
 Data:
 
+class stack{
+    constructor(){
+        this.items = [];
+    }
+
+    push(eelement){
+        this.items.push(element);
+    }
+    pop(){
+        if(this.items.length == 0)
+        return "underflow";
+        return this.items.pop();
+    }
+    peek(){
+        return this.items[this.items.length - 1];
+    }
+    isEmpty(){
+        return this.items.length == 0;
+    }
+    displayStack(){
+        var str = "";
+        for (var i = 0; i < this.items.length; i++)
+           str += this.items[i] + " ";
+        return str;
+    }
+
+}
+
 - `stack`
 
 Methods:
@@ -26,6 +54,8 @@ Methods:
 Getter
 
 - `length`: returns the current length of the stack.
+
+
 
 #### Test
 
@@ -49,6 +79,32 @@ console.log(myStack.isEmpty()); // true
 2. Create a class name `Queue` with the following data and methods. Also implement a `length` getter method.
 
 Data:
+class Queue {
+  constructor() {
+    this.elements = {};
+    this.head = 0;
+    this.tail = 0;
+  }
+  enqueue(element) {
+    this.elements[this.tail] = element;
+    this.tail++;
+  }
+  dequeue() {
+    const item = this.elements[this.head];
+    delete this.elements[this.head];
+    this.head++;
+    return item;
+  }
+  peek() {
+    return this.elements[this.head];
+  }
+  get length() {
+    return this.tail - this.head;
+  }
+  get isEmpty() {
+    return this.length === 0;
+  }
+}
 
 - `queue`
 

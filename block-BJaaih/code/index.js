@@ -4,6 +4,13 @@
 */
 
 // myMap function goes here
+Array.prototype.mymap = function(callback) {
+  const resultArray = [];
+  for (let index = 0; index < this.length; index++) {
+      resultArray.push(callback(this[index], index, this));
+  }
+  return resultArray;
+}
 
 // Test the myMap function you created above
 
@@ -29,6 +36,16 @@ After adding the function test it using the code below.
 */
 
 // You code goes here
+Array.prototype.myFilter = function(callback) {
+  const filterArr = [];
+  for(let index = 0; index<this.length; index++) {
+      if(!!callback(this[index], index, this)) {
+          filterArr.push(this[index]);
+      }
+  }
+}
+ 
+
 
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
@@ -50,6 +67,15 @@ Make sure it does not the changes the original array.
 */
 
 // You code goes here
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
+
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(numbers.shuffle());
@@ -64,6 +90,16 @@ Unique means no element should come multiple times.
 */
 
 // You code goes here
+Array.prototype.unique = function() {
+  var arr = [];
+  for (var i = 0; i < this.length; i++) {
+    if (!arr.contains(this[i])) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
+}
+
 
 // Test to check the shuffle method (It will return different output every time you call)
 let num = [1, 2, 3, 4, 2, 3, 6, 7, 7];
@@ -78,6 +114,10 @@ array that will contain only element that is common in both the array.
 */
 
 // You code goes here
+Array.prototype.intersect = function(...a) {
+  return [this,...a].reduce((p,c) => p.filter(e => c.includes(e)));
+}
+
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.intersection([2, 7, 11, 32])); // [2, 7]
@@ -90,6 +130,20 @@ chunk will be the remaining elements. `length` should default to 1.
 */
 
 // You code goes here
+function chunk (arr, len) {
+
+  var chunks = [],
+      i = 0,
+      n = arr.length;
+
+  while (i < n) {
+    chunks.push(arr.slice(i, i += len));
+  }
+
+  return chunks;
+}
+
+Array.chunk = chunk;
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.chunk(2)); // [[1, 2], [3, 4], [2, 3], [6, 7], [7]]

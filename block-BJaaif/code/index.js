@@ -6,6 +6,11 @@
 
 function makePerson(name, age) {
   // add code here
+  let obj=[];
+this.name = name;
+this.age = age;
+
+return obj;
 }
 
 var vicky = makePerson('Vicky', 24);
@@ -22,6 +27,9 @@ var vicky = makePerson('Vicky', 24);
 
 var personStore = {
   // add code here
+  greet:function(hello){
+    console.log("hello");
+},
 };
 
 // /********* Uncomment this line to test your work! *********/
@@ -31,9 +39,26 @@ var personStore = {
 
 function personFromPersonStore(name, age) {
   // add code here
+  let obj =Object.create(personStore);
+  obj.name=name;
+  obj.age=age;
+ 
+  return obj;
 }
 
 var sandra = personFromPersonStore('Sandra', 26);
+
+var personStore = {
+  // add code here
+  greet:function(hello){
+    console.log("hello");
+  },
+  introduce : function(name){
+    alert (`hi,my name is ${name}`);
+  },
+
+};
+
 
 // /********* Uncomment these lines to test your work! *********/
 // console.log(sandra.name); // -> Logs 'Sandra'

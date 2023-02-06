@@ -1,54 +1,63 @@
 
-
-CreatePerson.prototype = {
-
-    eat:function(){},
-
-    sleep:function(){},
-
-    walk:function(){},
-
-};
-
-function CreatePerson(name,age,gender){
-
-this.name= name;
-this.age = age;
-this.gender = gender;
-
+class Person{
+    constructor(name,age,gender){
+        this.name=name;
+        this.age=age;
+        this.gender=gender;
+    }
+    eat(){
+        console.log(`${this.name} can eat`);
+    }
+    sleep(){
+        console.log(`${this.name} can sleep`);
+    }
+    walk(){
+        console.log(`${this.name} can walk`);
+    }
 }
 
 
 
-CreatePlayer.prototype ={
-    play:function(){},
-};
-function CreatePlayer(sportName){
-CreatePerson.call(this,name,age,gender)
-this.sportName= sportName;
-
+class Player extends Person{
+    constructor(name,age,gender,sportsName){
+        super(name,age,gender);
+        this.sportsName=sportsName;
+    }
+    play(){
+        console.log(`${this.name} can play`);
+    }
+   
 }
-Object.setPrototypeOf(CreaePlayer.prototype,CreatePerson.prototype);
 
-
-CreateTeacher.prototype={
-    teach:function(){},
-};
-function CreateTeacher(instituteName){
- CreatePerson.call(this,name,age,gender);
-this.instituteName= instituteName;
-
+class Teacher extends Person{
+    constructor(name,age,gender,instituteName){
+        super(name,age,gender);
+        this.instituteName=instituteName;
+    }
+    teach(){
+        console.log(`${this.name} can teach`);
+    }
+   
 }
-Object.setPrototypeOf(CreateTeacher.prototype,CreatePerson.prototype);
 
-
-CreateArtist.prototype={
-    createArt:function(){},
-};
-function CreateArtist(kind){
- CreatePerson.call(this,name,age,gender);
-this.kind= kind;
-
+class Artist extends Person{
+    constructor(name,age,gender,kind){
+        super(name,age,gender);
+        this.kind=kind;
+    }
+    createArt(){
+        console.log(`${this.name} can create art`);
+    }
+   
 }
-Object.setPrototypeOf(CreateArtist.prototype,CreatePerson.prototype);
 
+class Cricketer extends Player{
+    constructor(name,age,gender,sportsName,teamName){
+        super(name,age,gender,sportsName);
+        this.teamName=teamName;
+    }
+    playCricket(){
+        console.log(`${this.name} can play cricket`);
+    }
+   
+}

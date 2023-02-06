@@ -1,13 +1,3 @@
-## Create Class
-
-Convert the give image into class using inheritance.
-
-- `name` is the property
-- `eat()` is the method
-
-Property ending with `()` is method. And others are properties.
-
-![Inheritance](../assets/inheritance.png)
 
 
 CreatePerson.prototype = {
@@ -38,7 +28,7 @@ CreatePerson.call(this,name,age,gender)
 this.sportName= sportName;
 
 }
-Object.setPrototype(CreaePlayer.prototype,CreatePerson.prototype);
+Object.setPrototypeOf(CreaePlayer.prototype,CreatePerson.prototype);
 
 
 CreateTeacher.prototype={
@@ -49,7 +39,7 @@ function CreateTeacher(instituteName){
 this.instituteName= instituteName;
 
 }
-Object.setPrototype(CreateTeacher.prototype,CreatePerson.prototype);
+Object.setPrototypeOf(CreateTeacher.prototype,CreatePerson.prototype);
 
 
 CreateArtist.prototype={
@@ -60,4 +50,5 @@ function CreateArtist(kind){
 this.kind= kind;
 
 }
-Object.setPrototype(CreateArtist.prototype,CreatePerson.prototype);
+Object.setPrototypeOf(CreateArtist.prototype,CreatePerson.prototype);
+
